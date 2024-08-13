@@ -1,344 +1,395 @@
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!--https://preview.themeforest.net/item/glitche-vcard-resume-wordpress-theme/full_screen_preview/22509848-->
-    <style>
-      head,
-      body {
-        margin: 0;
-        padding: 0;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <!--https://preview.themeforest.net/item/glitche-vcard-resume-wordpress-theme/full_screen_preview/22509848-->
+  <style>
+    head,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-      body {
-        background-color: #222228;
-        height: 100vh;
-        padding: 30px;
-        overflow: hidden;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
+    .body {
+      overflow-y: scroll;
+    }
+
+    .container {
+      background-color: #31313a;
+      position: relative;
+      min-height: calc(100vh - 60px);
+      margin: 30px;
+      /* overflow: hidden; */
+    }
+
+    .name {
+      font-size: 34px;
+      line-height: 1.4;
+      font-family: "Roboto";
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0em;
+      color: #f0f0f0;
+    }
+
+    .short-description {
+      font-family: "Roboto Mono";
+      letter-spacing: normal;
+      color: #a2a2a6;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .row {
+      padding: 30px 30px 0px 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-2 {
+      flex: 0 1 50%;
+      padding-right: 20px;
+    }
+
+    .title {
+      color: #f0f0f0;
+      font-family: "Roboto Mono";
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.52px;
+      line-height: 18px;
+      text-transform: uppercase;
+      box-shadow: rgb(102, 102, 102) 0px -6px 0px 0px inset;
+      display: inline;
+    }
+
+    .content {
+      color: #a2a2a6;
+      font-family: "Roboto Mono";
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: normal;
+      line-height: 24px;
+      word-break: break-word;
+    }
+
+    .title-container {
+      margin-bottom: 10px;
+    }
+
+    .timeline-title {
+      border: 1px solid #f26b38;
+      display: inline-block;
+      padding: 0 5px;
+      height: 20px;
+      color: #f26b38;
+      font-family: "Roboto Mono";
+      line-height: 18px;
+      font-weight: 500;
+      font-size: 11px;
+    }
+
+    .timeline-container {
+      margin-left: 15px;
+      padding: 15px;
+    }
+
+    .timeline-container-border {
+      border-left: 1px solid #f26b38;
+    }
+
+    .timeline-sub-title {
+      color: #f0f0f0;
+      font-family: "Roboto Mono";
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: normal;
+      margin-bottom: 15px;
+    }
+
+    .timeline-content {
+      color: #a2a2a6;
+      font-family: "Roboto Mono";
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: normal;
+      overflow-wrap: break-word;
+      text-rendering: optimizelegibility;
+    }
+
+    .chip {
+      border: 1px solid #f26b38;
+      display: inline-block;
+      padding: 0 5px;
+      height: 20px;
+      color: #f26b38;
+      font-family: "Roboto Mono";
+      line-height: 18px;
+      font-weight: 500;
+      font-size: 11px;
+    }
+
+    .chips {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+    }
+
+    .list {
+      padding-left: 10px;
+      color: #a2a2a6;
+      font-family: "Roboto Mono";
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    .list-item::marker {
+      color: #f26b38;
+    }
+
+    .line {
+      content: '';
+      position: fixed;
+      background: #222228;
+      z-index: 105;
+    }
+
+    .top {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 30px;
+    }
+
+    .bottom {
+      left: 0;
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      height: 30px;
+    }
+
+    .left {
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 200%;
+    }
+
+    .right {
+      left: auto;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 200%;
+    }
+
+    @media (max-width: 840px) {
       .container {
-        height: calc(100vh - 60px);
-        width: calc(100vw - 60px);
-        background-color: #31313a;
-        overflow: auto;
-      }
-
-      .name {
-        font-size: 34px;
-        line-height: 1.4;
-        font-family: "Roboto";
-        font-weight: 500;
-        text-transform: none;
-        letter-spacing: 0em;
-        color: #f0f0f0;
-      }
-
-      .short-description {
-        font-family: "Roboto Mono";
-        letter-spacing: normal;
-        color: #a2a2a6;
-        font-weight: 400;
-        font-size: 18px;
+        position: relative;
+        min-height: calc(100vh - 30px);
+        margin: 15px;
       }
 
       .row {
-        padding: 30px 30px 0px 30px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
-      .col {
-        display: flex;
-        flex-direction: column;
+        padding: 30px 15px 0px 15px;
       }
 
       .col-2 {
-        flex: 0 1 50%;
-        padding-right: 20px;
+        flex: 1 1 100%;
       }
 
-      .title {
-        color: #f0f0f0;
-        font-family: "Roboto Mono";
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 0.52px;
-        line-height: 18px;
-        text-transform: uppercase;
-        box-shadow: rgb(102, 102, 102) 0px -6px 0px 0px inset;
-        display: inline;
+      .top {
+        height: 15px;
       }
 
-      .content {
-        color: #a2a2a6;
-        font-family: "Roboto Mono";
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: normal;
-        line-height: 24px;
-        word-break: break-word;
+      .bottom {
+        height: 15px;
       }
 
-      .title-container {
-        margin-bottom: 10px;
+      .left {
+        width: 15px;
       }
 
-      .timeline-title {
-        border: 1px solid #f26b38;
-        display: inline-block;
-        padding: 0 5px;
-        height: 20px;
-        color: #f26b38;
-        font-family: "Roboto Mono";
-        line-height: 18px;
-        font-weight: 500;
-        font-size: 11px;
+      .right {
+        width: 15px;
       }
 
-      .timeline-container {
-        margin-left: 15px;
-        padding: 15px;
-      }
+    }
+  </style>
+</head>
 
-      .timeline-container-border {
-        border-left: 1px solid #f26b38;
-      }
-
-      .timeline-sub-title {
-        color: #f0f0f0;
-        font-family: "Roboto Mono";
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: normal;
-        margin-bottom: 15px;
-      }
-
-      .timeline-content {
-        color: #a2a2a6;
-        font-family: "Roboto Mono";
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: normal;
-        overflow-wrap: break-word;
-        text-rendering: optimizelegibility;
-      }
-
-      .chip {
-        border: 1px solid #f26b38;
-        display: inline-block;
-        padding: 0 5px;
-        height: 20px;
-        color: #f26b38;
-        font-family: "Roboto Mono";
-        line-height: 18px;
-        font-weight: 500;
-        font-size: 11px;
-      }
-
-      .chips {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px 20px;
-      }
-
-      .list {
-        padding-left: 10px;
-        color: #a2a2a6;
-        font-family: "Roboto Mono";
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: normal;
-      }
-
-      .list-item::marker {
-        color: #f26b38;
-      }
-
-      @media (max-width: 840px) {
-        body {
-          padding: 15px;
-          overflow: hidden;
-        }
-
-        .container {
-          height: calc(100vh - 30px);
-          width: calc(100vw - 30px);
-          overflow: auto;
-        }
-
-        .row {
-          padding: 30px 15px 0px 15px;
-        }
-
-        .col-2 {
-          flex: 1 1 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <span class="name">Harsh Parecha</span>
+<body>
+  <div class="line top"></div>
+  <div class="line bottom"></div>
+  <div class="line left"></div>
+  <div class="line right"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="name">Harsh Parecha</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="title-container">
+          <div class="title">
+            <span>About Me</span>
+          </div>
+        </div>
+        <div class="content">
+          I'm a software engineer with a strong track record in developing
+          software applications across various technologies. I've contributed
+          to multiple successful projects, ensuring quality and timely
+          delivery. I excel in collaborating with cross-functional teams,
+          managing efficient workflows, and mentoring junior developers. Known
+          for my problem-solving skills, I'm adaptable and always eager to
+          embrace new challenges. In my free time, I enjoy playing video
+          games, which fuels my creativity and passion for technology.
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="title-container">
-            <div class="title">
-              <span>About Me</span>
+    </div>
+    <div class="row">
+      <div class="col col-2">
+        <div class="title-container">
+          <div class="title">
+            <span>Experience</span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="timeline">
+            <div class="timeline-title">2021 - 2024</div>
+            <div class="timeline-container timeline-container-border">
+              <div class="timeline-sub-title">
+                Software Enginner - Strand Life Sciences
+              </div>
+              <div class="timeline-content">
+                I developed and maintained software applications using various
+                technologies, contributed to multiple projects, and
+                collaborated with cross-functional teams to deliver
+                high-quality features. I utilized Git and Jira for efficient
+                project management, provided mentorship to junior developers,
+                and played a key role in enhancing the company’s service
+                capabilities. My work improved code quality and earned
+                recognition for problem-solving skills and adaptability.
+              </div>
             </div>
           </div>
-          <div class="content">
-            I'm a software engineer with a strong track record in developing
-            software applications across various technologies. I've contributed
-            to multiple successful projects, ensuring quality and timely
-            delivery. I excel in collaborating with cross-functional teams,
-            managing efficient workflows, and mentoring junior developers. Known
-            for my problem-solving skills, I'm adaptable and always eager to
-            embrace new challenges. In my free time, I enjoy playing video
-            games, which fuels my creativity and passion for technology.
+          <div class="timeline">
+            <div class="timeline-title">2020 - 2022</div>
+            <div class="timeline-container timeline-container-border">
+              <div class="timeline-sub-title">Associate Enginner - AtoS</div>
+              <div class="timeline-content">
+                I analyzed stakeholder requirements to design and implement
+                automation solutions that streamlined workflows and reduced
+                manual tasks. By developing scripts, dashboards, and APIs, I
+                improved operational efficiency, incident response times, and
+                reporting accuracy.
+              </div>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-title">2021 - 2024</div>
+            <div class="timeline-container">
+              <div class="timeline-sub-title">System Enginner - AtoS</div>
+              <div class="timeline-content">
+                I managed server patching, monitoring, and maintenance across
+                multiple client environments, ensuring high availability and
+                swift issue resolution. My work resulted in 100% SLA
+                achievement, 99.98% patch compliance, and a 50% reduction in
+                manual tasks.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col col-2">
-          <div class="title-container">
-            <div class="title">
-              <span>Experience</span>
-            </div>
-          </div>
-          <div class="content">
-            <div class="timeline">
-              <div class="timeline-title">2021 - 2024</div>
-              <div class="timeline-container timeline-container-border">
-                <div class="timeline-sub-title">
-                  Software Enginner - Strand Life Sciences
-                </div>
-                <div class="timeline-content">
-                  I developed and maintained software applications using various
-                  technologies, contributed to multiple projects, and
-                  collaborated with cross-functional teams to deliver
-                  high-quality features. I utilized Git and Jira for efficient
-                  project management, provided mentorship to junior developers,
-                  and played a key role in enhancing the company’s service
-                  capabilities. My work improved code quality and earned
-                  recognition for problem-solving skills and adaptability.
-                </div>
+      <div class="col col-2">
+        <div class="row">
+          <div class="col">
+            <div class="title-container">
+              <div class="title">
+                <span>Skills</span>
               </div>
             </div>
-            <div class="timeline">
-              <div class="timeline-title">2020 - 2022</div>
-              <div class="timeline-container timeline-container-border">
-                <div class="timeline-sub-title">Associate Enginner - AtoS</div>
-                <div class="timeline-content">
-                  I analyzed stakeholder requirements to design and implement
-                  automation solutions that streamlined workflows and reduced
-                  manual tasks. By developing scripts, dashboards, and APIs, I
-                  improved operational efficiency, incident response times, and
-                  reporting accuracy.
-                </div>
-              </div>
-            </div>
-            <div class="timeline">
-              <div class="timeline-title">2021 - 2024</div>
-              <div class="timeline-container">
-                <div class="timeline-sub-title">System Enginner - AtoS</div>
-                <div class="timeline-content">
-                  I managed server patching, monitoring, and maintenance across
-                  multiple client environments, ensuring high availability and
-                  swift issue resolution. My work resulted in 100% SLA
-                  achievement, 99.98% patch compliance, and a 50% reduction in
-                  manual tasks.
-                </div>
+            <div class="content">
+              <div class="chips">
+                <div class="chip">HTML</div>
+                <div class="chip">JavaScript</div>
+                <div class="chip">TypeScript</div>
+                <div class="chip">Python</div>
+                <div class="chip">Software Development</div>
+                <div class="chip">Problem Solving</div>
+                <div class="chip">Code Review</div>
+                <div class="chip">Mentoring</div>
+                <div class="chip">Technical expert</div>
+                <div class="chip">API Integration</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col col-2">
-          <div class="row">
-            <div class="col">
-              <div class="title-container">
-                <div class="title">
-                  <span>Skills</span>
-                </div>
-              </div>
-              <div class="content">
-                <div class="chips">
-                  <div class="chip">HTML</div>
-                  <div class="chip">JavaScript</div>
-                  <div class="chip">TypeScript</div>
-                  <div class="chip">Python</div>
-                  <div class="chip">Software Development</div>
-                  <div class="chip">Problem Solving</div>
-                  <div class="chip">Code Review</div>
-                  <div class="chip">Mentoring</div>
-                  <div class="chip">Technical expert</div>
-                  <div class="chip">API Integration</div>
-                </div>
+        <div class="row">
+          <div class="col">
+            <div class="title-container">
+              <div class="title">
+                <span>Achivements</span>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="title-container">
-                <div class="title">
-                  <span>Achivements</span>
-                </div>
-              </div>
-              <div class="content">
-                <ul class="list">
-                  <li class="list-item">
-                    Accolade Bronze: Award received for developing and
-                    implementing Incident assignment
-                  </li>
-                  <li class="list-item">
-                    Spot Recognition: For developing reports and dashboard which
-                    reduce repetitive task of gathering info and representing it
-                    in graphs.
-                  </li>
-                  <li class="list-item">
-                    Accolade Champagne: Received for commitment and quality to
-                    take ownership and drive it to completion.
-                  </li>
-                  <li class="list-item">
-                    Shining Star: For contribution and extraordinary efforts
-                    demonstrated in the project
-                  </li>
-                </ul>
-              </div>
+            <div class="content">
+              <ul class="list">
+                <li class="list-item">
+                  Accolade Bronze: Award received for developing and
+                  implementing Incident assignment
+                </li>
+                <li class="list-item">
+                  Spot Recognition: For developing reports and dashboard which
+                  reduce repetitive task of gathering info and representing it
+                  in graphs.
+                </li>
+                <li class="list-item">
+                  Accolade Champagne: Received for commitment and quality to
+                  take ownership and drive it to completion.
+                </li>
+                <li class="list-item">
+                  Shining Star: For contribution and extraordinary efforts
+                  demonstrated in the project
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="title-container">
-                <div class="title">
-                  <span>Education</span>
-                </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="title-container">
+              <div class="title">
+                <span>Education</span>
               </div>
-              <div class="content">
-                <div class="timeline">
-                  <div class="timeline-title">2012 - 2016</div>
-                  <div class="timeline-container">
-                    <div class="timeline-sub-title">
-                      B.E. Computer Engineering
-                    </div>
-                    <div class="timeline-content">
-                      Bachelor's Degree in Computer Engineering
-                    </div>
+            </div>
+            <div class="content">
+              <div class="timeline">
+                <div class="timeline-title">2012 - 2016</div>
+                <div class="timeline-container">
+                  <div class="timeline-sub-title">
+                    B.E. Computer Engineering
+                  </div>
+                  <div class="timeline-content">
+                    Bachelor's Degree in Computer Engineering
                   </div>
                 </div>
               </div>
@@ -347,5 +398,7 @@
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
