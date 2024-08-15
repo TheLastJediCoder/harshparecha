@@ -1,0 +1,154 @@
+head,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.layout-container {
+  background-color: #31313a;
+  position: relative;
+  min-height: calc(100vh - 60px);
+  margin: 30px;
+}
+
+.name {
+  font-size: 34px;
+  line-height: 1.4;
+  font-family: "Roboto";
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0em;
+  color: #f0f0f0;
+}
+
+.title {
+  color: #f0f0f0;
+  font-family: "Roboto Mono";
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.52px;
+  line-height: 18px;
+  text-transform: uppercase;
+  box-shadow: rgb(102, 102, 102) 0px -6px 0px 0px inset;
+  display: inline;
+}
+
+.content {
+  color: #a2a2a6;
+  font-family: "Roboto Mono";
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 24px;
+  word-break: break-word;
+}
+
+.title-container {
+  margin-bottom: 10px;
+}
+
+.timeline-container {
+  margin-left: 15px;
+  padding: 15px;
+}
+
+.timeline-container-border {
+  border-left: 1px solid #f26b38;
+}
+
+.timeline-sub-title {
+  color: #f0f0f0;
+  font-family: "Roboto Mono";
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin-bottom: 15px;
+}
+
+.tag {
+  color: #f26b38;
+  font-family: "Roboto Mono";
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+  border: 1px solid #f26b38;
+  padding: 0 5px;
+  height: 20px;
+}
+
+.list {
+  padding-left: 10px;
+  color: #a2a2a6;
+  font-family: "Roboto Mono";
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.list-item::marker {
+  color: #f26b38;
+}
+
+.line {
+  content: "";
+  position: fixed;
+  background: #222228;
+  z-index: 105;
+}
+
+.top {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.bottom {
+  left: 0;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.left {
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 200%;
+}
+
+.right {
+  left: auto;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 200%;
+}
+
+@media (max-width: 840px) {
+  .layout-container {
+    position: relative;
+    min-height: calc(100vh - 30px);
+    margin: 15px;
+  }
+  .top {
+    height: 15px;
+  }
+  .bottom {
+    height: 15px;
+  }
+  .left {
+    width: 15px;
+  }
+  .right {
+    width: 15px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
