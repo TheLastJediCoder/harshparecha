@@ -1,0 +1,22 @@
+---
+layout: default
+title: Devlogs
+permalink: /devlogs/
+---
+
+<div class="row px-3">
+  {% for devlog in site.devlogs %}
+  <div class="mb-3 rounded" style="border: 1px solid #f26b38">
+    <a class="post-link" href="{{ site.baseurl }}{{ devlog.url }}">
+      <div style="display: block;">
+        <div class="post-title">{{ devlog.title }}</div>
+        <p>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <p>{{ devlog.date | date: "%B %d, %Y" }}</p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>

@@ -69,6 +69,15 @@ body {
   margin-bottom: 15px;
 }
 
+.post-title {
+  color: #f0f0f0;
+  font-family: "Roboto Mono";
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin: 15px 0px;
+}
+
 .tag {
   color: #f26b38;
   font-family: "Roboto Mono";
@@ -131,21 +140,36 @@ body {
   height: 200%;
 }
 
+.sticky-nav {
+  position: sticky !important;
+  top: 30px;
+  background-color: #31313a;
+}
+
+.post-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media (max-width: 840px) {
   .layout-container {
     position: relative;
     min-height: calc(100vh - 30px);
     margin: 15px;
   }
+
   .top {
     height: 15px;
   }
+
   .bottom {
     height: 15px;
   }
+
   .left {
     width: 15px;
   }
+
   .right {
     width: 15px;
   }
