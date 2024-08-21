@@ -5,18 +5,28 @@ permalink: /devlogs/
 ---
 
 <div class="row px-3">
-  {% for devlog in site.devlogs %}
-  <div class="mb-3 rounded" style="border: 1px solid #f26b38">
-    <a class="post-link" href="{{ site.baseurl }}{{ devlog.url }}">
-      <div style="display: block;">
-        <div class="post-title">{{ devlog.title }}</div>
-        <p>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <p>{{ devlog.date | date: "%B %d, %Y" }}</p>
-      </div>
-    </a>
+  <div class="col-md-10 col-12 mb-3">
+    {% for devlog in site.devlogs %}
+    <div class="mb-3 px-3 rounded" style="border: 1px solid #f26b38">
+      <a class="post-link" href="{{ site.baseurl }}{{ devlog.url }}">
+        <div style="display: block;">
+          <div class="post-title">{{ devlog.title }}</div>
+          <div class="post-description">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </div>
+          <div class="post-date">{{ devlog.date | date: "%B %d, %Y" }}</div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+  <div class="col-md-2 col-12  mb-3">
+    <div class="panel-section">
+      <div class="panel-heading">Recent</div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-heading">Series</div>
+    </div>
+  </div>
 </div>
