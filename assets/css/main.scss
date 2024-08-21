@@ -69,6 +69,15 @@ body {
   margin-bottom: 15px;
 }
 
+.post-title {
+  color: #f0f0f0;
+  font-family: "Roboto Mono";
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin: 15px 0px;
+}
+
 .tag {
   color: #f26b38;
   font-family: "Roboto Mono";
@@ -147,6 +156,12 @@ body {
     position: relative;
     min-height: calc(100vh - 30px);
     margin: 15px;
+  }
+
+  .sticky-nav {
+    position: sticky !important;
+    top: 15px;
+    background-color: #31313a;
   }
 
   .top {

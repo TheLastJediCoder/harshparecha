@@ -158,6 +158,12 @@ body {
     margin: 15px;
   }
 
+  .sticky-nav {
+    position: sticky !important;
+    top: 15px;
+    background-color: #31313a;
+  }
+
   .top {
     height: 15px;
   }
