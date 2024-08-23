@@ -5,7 +5,7 @@ permalink: /devlogs/
 ---
 
 <div class="row px-3">
-  <div class="col-md-10 col-12 mb-3">
+  <div class="col-md-12 col-12 mb-3">
     {% for devlog in site.devlogs %}
     <div class="mb-3 px-3 rounded" style="border: 1px solid #f26b38">
       <a class="post-link" href="{{ site.baseurl }}{{ devlog.url }}">
@@ -21,12 +21,21 @@ permalink: /devlogs/
     </div>
     {% endfor %}
   </div>
-  <div class="col-md-2 col-12  mb-3">
+  <!-- <div class="col-md-3 col-12  mb-3">
     <div class="panel-section">
       <div class="panel-heading">Recent</div>
+      <div class="row">
+        <div class="col mb-3">
+          <div class="content">
+            <div class="col">
+              <div class="tag">1</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="panel-section">
       <div class="panel-heading">Series</div>
     </div>
-  </div>
+  </div> -->
 </div>

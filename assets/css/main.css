@@ -184,7 +184,7 @@ body {
   text-decoration: none;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 767px) {
   .layout-container {
     position: relative;
     min-height: calc(100vh - 30px);
@@ -195,6 +195,12 @@ body {
     position: sticky !important;
     top: 15px;
     background-color: #31313a;
+  }
+
+  .panel-section {
+    padding: 10px 0px 0px 0px;
+    margin: 2px 0px 30px 0px;
+    border-left: 0px solid #666666;
   }
 
   .top {
